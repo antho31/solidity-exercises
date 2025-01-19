@@ -11,8 +11,6 @@ As a base structure, we expect 2 token contracts:
 
 ### Functionality expected of the USD token
 
-#### 1. Minting
-
 - Any user should be able to mint any amount of USD tokens.
 
 ### Functionality expected of the pool
@@ -44,6 +42,11 @@ The pool should be a token contract, which USD tokens can be deposited and withd
 
 1. Upgradeable vault contract with diamond storage pattern
 2. Tests to demonstrate that it is not prone to attacks or bad debt.
+
+### Solution #1
+
+- Contract: [`Vault`](./contracts/Vault.sol)
+- Tests: `npx hardhat test test/Exercise1.ts`
 
 ## Exercise 2 - Vault Attack
 
@@ -93,8 +96,18 @@ contract BananaVault {
 
 This exercise is considered complete if the contract at address `0x5f1b1316D1cB4f497c0409Ae86153DE215A238C7` is entirely emptied.
 
+### Solution #2
+
+- Script in [`Exercise2`](./test/Exercise2.ts) test file
+- Simulate the attack (test from Sepolia Optimism network fork): `npx hardhat test test/Exercise2.ts`
+
 ## Exercise 3 - Blind Vault Attack
 
 The objective of this exercise is to find a way to empty a [deployed vault on the Sepolia Optimism network](https://sepolia-optimism.etherscan.io/address/0x65dcd95cf3aaafa432aBb2b7DcACc68911635349) but this time without the code of the contract or any ABI.
 
 This exercise will be considered complete if the contract at address `0x65dcd95cf3aaafa432aBb2b7DcACc68911635349`.  
+
+### Solution #3
+
+- Script in [`Exercise3`](./test/Exercise3.ts) test file
+- Simulate the attack (test from Sepolia Optimism network fork): `npx hardhat test test/Exercise3.ts`
